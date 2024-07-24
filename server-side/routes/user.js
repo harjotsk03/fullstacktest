@@ -30,4 +30,10 @@ router.post('/login', async (req, res) => {
     }
 });
 
+// Logout user (optional)
+router.post('/logout', (req, res) => {
+    // Here you can handle clearing sessions or tokens if you're using them
+    res.status(200).json({ message: 'User logged out successfully' });
+});
+
 module.exports = router;

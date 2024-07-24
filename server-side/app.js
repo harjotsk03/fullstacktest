@@ -1,13 +1,10 @@
-// Import required packages
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors'); // Import cors
 require('dotenv').config();
 
-// Initialize the app
 const app = express();
-
-// Middleware to parse JSON
-app.use(express.json());
+const port = process.env.PORT || 3000;
 
 // MongoDB connection URI
 const uri = process.env.MONGODB_URI;
@@ -24,13 +21,17 @@ mongoose.connect(uri, {
     console.error('Error connecting to MongoDB:', err);
 });
 
-// Import routes
-const userRoutes = require('./routes/user');
+app.use(express.json());
 
-// Use routes
+// Enable CORS for specific origin
+app.use(cors({
+    origin: 'http://localhost:3001', // Allow requests from your React frontend
+}));
+
+// Import and use your routes
+const userRoutes = require('./routes/user');
 app.use('/api/users', userRoutes);
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 });
