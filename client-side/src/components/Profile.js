@@ -13,7 +13,7 @@ function Profile() {
 
   const logOut = async () => {
     try {
-      await axios.post('http://localhost:3000/api/users/logout');
+      await axios.post('https://fullstacktest-backend.onrender.com/api/users/logout');
 
       // Navigate back to the login page
       navigate('/login');

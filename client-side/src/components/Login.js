@@ -9,7 +9,7 @@ function Login() {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/api/users/login', { email });
+      const response = await axios.post('https://fullstacktest-backend.onrender.com/api/users/login', { email });
       if (response.data && response.data.user) {
         setMessage('Login successful');
         navigate('/profile', { state: { user: response.data.user } });

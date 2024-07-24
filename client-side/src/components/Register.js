@@ -7,9 +7,10 @@ function Register() {
   const [age, setAge] = useState('');
   const [message, setMessage] = useState('');
 
+  
   const handleRegister = async () => {
     try {
-      await axios.post('http://localhost:3000/api/users/register', { name, email, age });
+      await axios.post('https://fullstacktest-backend.onrender.com/api/users/register', { name, email, age });
       setMessage('Registration successful. You can now log in.');
     } catch (error) {
       setMessage('Error registering: ' + error.response.data.error);
