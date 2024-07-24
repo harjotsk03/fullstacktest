@@ -28,7 +28,7 @@ app.use(cors({
     origin: [
         'http://localhost:3000', 
         'http://localhost:3001',
-        'https://fullstacktest-3f15y9msl-harjot-singhs-projects.vercel.app',
+        'https://fullstacktest-kohl.vercel.app/',
     ],
 }));
 
