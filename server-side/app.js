@@ -25,7 +25,11 @@ app.use(express.json());
 
 // Configure CORS
 app.use(cors({
-    origin: ['http://localhost:3000', 'http://localhost:3001'], // Add allowed origins here
+    origin: [
+        'http://localhost:3000', 
+        'http://localhost:3001', 
+        'https://fullstacktest-1d4ivogpu-harjot-singhs-projects.vercel.app' // Add this domain
+    ],
 }));
 
 // Import and use your routes
