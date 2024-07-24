@@ -23,9 +23,9 @@ mongoose.connect(uri, {
 
 app.use(express.json());
 
-// Enable CORS for specific origin
+// Configure CORS
 app.use(cors({
-    origin: 'http://localhost:3001', // Allow requests from your React frontend
+    origin: ['http://localhost:3000', 'http://localhost:3001'], // Add allowed origins here
 }));
 
 // Import and use your routes
